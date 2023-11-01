@@ -1,7 +1,9 @@
 <template>
-  <div class="default">
-    <slot />
-  </div>
+  <v-layout>
+    <v-main class="default">
+      <slot />
+    </v-main>
+  </v-layout>
 </template>
 
 <style scoped>
