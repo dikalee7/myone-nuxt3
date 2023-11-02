@@ -12,6 +12,7 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
+    '@pinia/nuxt',
     //...
   ],
   vite: {
@@ -20,6 +21,9 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+  },
+  pinia: {
+    storesDirs: ['./stores/**']
   },
   devtools: { enabled: true }
 })
