@@ -1,0 +1,15 @@
+.vSpace {
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.text-small-left {
+    font-size: small;
+    text-align: left;
+}
+
+.linkCls {
+    color: blue;
+    cursor: pointer;
+}
+

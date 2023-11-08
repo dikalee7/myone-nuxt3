@@ -4,7 +4,7 @@ export interface IFLoadingModule {
   pageLoading: boolean;
 }
 
-export const useHeaderStore = defineStore('pageLoading', {
+export const useLoadingStore = defineStore('pageLoading', {
   state: (): IFLoadingModule => ({
     pageLoading: false,
   }),

@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       })
     },
     '@pinia/nuxt',
+    'nuxt-lodash',
     //...
   ],
   vite: {
