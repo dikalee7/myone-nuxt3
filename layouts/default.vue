@@ -1,7 +1,6 @@
 <template>
   <v-layout>
-    <!-- <UiMyoneHeader /> -->
-    <v-main class="default">
+    <v-main>
       <UiMyoneHeader />
       <slot />
     </v-main>

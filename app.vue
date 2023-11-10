@@ -1,39 +1,13 @@
 <template>
-  <nav>
-    <NuxtLink to="/">
-      Home
-    </NuxtLink>
-    <NuxtLink to="/custom">
-    Custom
-    </NuxtLink>
-    <NuxtLink to="/dynamic">
-      Dynamic
-    </NuxtLink>
-    <NuxtLink to="/other">
-      Other
-    </NuxtLink>
-  </nav>
-  <NuxtLayout class="layouts">
+  <NuxtLayout>
+    <NuxtLoadingIndicator />
     <NuxtPage />
   </NuxtLayout>
-  <footer>
-    <button @click="setPageLayout('default')">
-      layouts/default.vue
-    </button>
-    <button @click="setPageLayout('custom')">
-      layouts/custom.vue
-    </button>
-    <button @click="setPageLayout('other')">
-      layouts/other.vue
-    </button>
-    <button @click="setPageLayout(false)">
-      Remove layout
-    </button>
-  </footer>
 </template>
-
+ 
 <style scoped>
-nav, footer {
+nav,
+footer {
   display: flex;
   align-items: center;
   gap: 1rem;

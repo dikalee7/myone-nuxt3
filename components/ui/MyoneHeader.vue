@@ -39,7 +39,7 @@ export default defineComponent({
                 router.go(-1);
             },
             goHome: () => {
-                router.replace('main');
+                router.replace('/');
             }
         }
 
