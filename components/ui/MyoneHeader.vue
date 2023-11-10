@@ -1,8 +1,5 @@
 <template>
-  <v-app-bar
-    color="teal-darken-4"
-    v-if="!hInfo.hideHeader"
-  >
+  <v-app-bar color="teal-darken-4" v-if="!hInfo.hideHeader">
     <template v-slot:image>
       <v-img
         gradient="to top right, rgba(19,84,122,.8), rgba(128,208,199,.8)"
@@ -27,30 +24,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-    setup () {
-        const store = useHeaderStore();
-        const router = useRouter();
+  setup() {
+    const store = useHeaderStore();
+    const router = useRouter();
+    const mo = useMo();
 
-        const tfn = {
-            goBack: () => {
-                router.go(-1);
-            },
-            goHome: () => {
-                router.replace('/');
-            }
-        }
+    const tfn = {
+      goBack: () => {
+        router.go(-1);
+      },
+      goHome: () => {
+        // router.replace('/');
+        mo.confirm({
+          title: 'confirm test',
+          message: `mo 확인용`,
+        }).then((rslt) => {
+          console.log(rslt);
+        });
+      },
+    };
 
-        return {
-            hInfo: computed(() => store.getHeaderInfo),
-            tfn
-        }
-    },
-})
+    return {
+      hInfo: computed(() => store.getHeaderInfo),
+      tfn,
+    };
+  },
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

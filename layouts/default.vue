@@ -3,6 +3,7 @@
     <v-main>
       <UiMyoneHeader />
       <slot />
+      <ConfirmView />
     </v-main>
   </v-layout>
 </template>

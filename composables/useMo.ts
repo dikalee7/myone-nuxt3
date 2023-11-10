@@ -26,7 +26,7 @@ export const useMo = (): IFMo => {
   const callback = () => {
     return new Promise((resolve) => {
       reset();
-      ($bus as any).on('returnAlert', (f: boolean) => {
+      $bus.$on('returnAlert', (f: any) => {
         reset();
         resolve(f);
       });
