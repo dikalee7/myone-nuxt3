@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-main>
-      <UiMyoneHeader />
+      <MyoneHeader />
       <slot />
       <ConfirmView />
     </v-main>
