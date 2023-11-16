@@ -46,12 +46,13 @@
 const dialog = ref(false);
 const message = ref('');
 const title = ref('');
-const options: Ref<IFConfirmOptions> = ref({
+const basicOptions = {
   color: 'indigo',
   width: 400,
   zIndex: 3000,
   noconfirm: false,
-});
+};
+const options: Ref<IFConfirmOptions> = ref(basicOptions);
 
 const { $bus } = useNuxtApp();
 
@@ -72,11 +73,19 @@ const open = (t: string, m: string, opt: IFConfirmOptions | undefined) => {
 };
 const agree = () => {
   $bus.$emit('returnAlert', true);
+  initOptions();
   dialog.value = false;
 };
 const cancel = () => {
   $bus.$emit('returnAlert', false);
+  initOptions();
   dialog.value = false;
+};
+
+const initOptions = () => {
+  title.value = '';
+  message.value = '';
+  options.value = basicOptions;
 };
 </script>
 
