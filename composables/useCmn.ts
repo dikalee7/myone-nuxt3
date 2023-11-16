@@ -3,6 +3,7 @@ import _ from 'lodash';
 export interface IFCmn {
   setLoading: (f: boolean) => void;
   setHeader: (o: IFHeader) => void;
+  getImageUrl: (p: string) => string;
 }
 
 export const useCmn = (): IFCmn => {
@@ -14,6 +15,9 @@ export const useCmn = (): IFCmn => {
     },
     setHeader: (o: IFHeader) => {
       headerStore.setHeaderInfo(_.omitBy(o, _.isUndefined));
+    },
+    getImageUrl: (p: string) => {
+      return p ? new URL(`/assets/image/${p}`, import.meta.url).href : '';
     },
   };
 };

@@ -37,13 +37,7 @@ export default defineComponent({
         router.go(-1);
       },
       goHome: () => {
-        // router.replace('/');
-        mo.confirm({
-          title: 'confirm test',
-          message: `mo 확인용`,
-        }).then((rslt) => {
-          console.log(rslt);
-        });
+        router.replace('/');
       },
     };
 

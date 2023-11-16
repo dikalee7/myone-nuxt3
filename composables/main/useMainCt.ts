@@ -21,7 +21,7 @@ export const useMainCt = () => {
       title: '공통 가이드',
       subtitle: '',
       text: '공통 가이드 및 샘플',
-      image: 'back-service.jpg',
+      image: 'main/back-service.jpg',
       gradient: 'to top right, rgba(68, 69, 8,.8), rgba(244, 245, 203,.8)',
       actions: [
         {
@@ -41,7 +41,7 @@ export const useMainCt = () => {
       title: '',
       subtitle: 'MINE',
       text: `It's mine!!`,
-      image: 'back-traffic.jpg',
+      image: 'main/back-traffic.jpg',
       gradient: 'to top right, rgba(125, 46, 9,.8), rgba(250, 115, 52,.8)',
       actions: [
         {
@@ -56,7 +56,7 @@ export const useMainCt = () => {
       title: '',
       subtitle: 'STOCK',
       text: '주식 정보',
-      image: 'back-travel.jpg',
+      image: 'main/back-travel.jpg',
       gradient: 'to top right, rgba(3, 5, 33,.8), rgba(100, 108, 227,.8)',
       actions: [
         {

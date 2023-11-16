@@ -1,5 +1,5 @@
 <template>
-  <v-card theme="dark" :image="tfn.getImageUrl(ctInfo.image)">
+  <v-card theme="dark" :image="getImageUrl(ctInfo.image)">
     <template v-slot:image>
       <v-img :gradient="ctInfo.gradient"> </v-img>
     </template>
@@ -17,7 +17,7 @@
 
         <v-card-actions v-if="ctInfo.actions">
           <v-btn
-            class="ms-2"
+            class="ms-2 text-none"
             variant="outlined"
             size="small"
             @click="tfn.action(act.emnm, act.empr)"
@@ -37,13 +37,10 @@ const emits = defineEmits(['goPage']);
 const props = defineProps<{
   ctInfo: IFCtInfo;
 }>();
+const { getImageUrl } = useCmn();
 
 const tfn = {
-  getImageUrl: (imagename: string) => {
-    return imagename
-      ? new URL(`/assets/image/main/${imagename}`, import.meta.url).href
-      : '';
-  },
+  getImageUrl: useCmn().getImageUrl,
   action: (enm: any, empr: any) => {
     // emit 명에 따라 분기 처리 될 수 있도록(확장성 고려)
     if (enm) {

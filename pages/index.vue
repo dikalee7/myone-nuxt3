@@ -2,6 +2,7 @@
   <v-card class="mx-auto">
     <v-container fluid>
       <v-row dense>
+        {{ apiBase }}
         <v-col cols="12" v-for="ct in mainCont" :key="ct.id">
           <MainContent :ctInfo="ct" @goPage="tfn.goPage" />
         </v-col>
@@ -21,6 +22,8 @@ definePageMeta({
 const router = useRouter();
 const mo = useMo();
 const { mainCont } = useMainCt();
+const runtimeConfig = useRuntimeConfig();
+const apiBase = runtimeConfig.public.apiBase;
 
 const tfn = {
   goPage: (p: any) => {

@@ -29,5 +29,10 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['composables/**'],
   },
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.API_BASE_URL,
+    },
+  },
   devtools: { enabled: true },
 });
