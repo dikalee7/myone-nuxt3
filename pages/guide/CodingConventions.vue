@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-card
-      title="코딩 규칙"
+      title="코딩 규칙(추후 nuxt3에 맞게 변경할 예정)"
       subtitle="Coding Convention"
       prepend-icon="mdi-cube"
     >
@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { TB_THEME } from '~/components/ui/TableView.vue';
+import { TB_THEME } from '~/components/ui/UiTableView.vue';
 
 definePageMeta({
   title: 'Coding Conventions',

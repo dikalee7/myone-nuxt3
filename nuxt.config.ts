@@ -34,5 +34,11 @@ export default defineNuxtConfig({
       apiBase: process.env.API_BASE_URL,
     },
   },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
   devtools: { enabled: true },
 });

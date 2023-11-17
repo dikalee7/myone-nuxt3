@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-card class="mb-3">
+    <v-card class="mb-3" title="useMo 사용법" prepend-icon="mdi-cube">
       <template v-slot:text>
         <div class="text-center">{{ callRslt }}</div>
       </template>
@@ -28,10 +28,10 @@
 </template>
 
 <script setup lang="ts">
-import { TB_THEME } from '~/components/ui/TableView.vue';
+import { TB_THEME } from '~/components/ui/UiTableView.vue';
 
 definePageMeta({
-  title: 'useMo 사용법',
+  title: 'composables / useMo ',
   hideHeader: false,
   hideBack: false,
   hideHome: false,
@@ -89,6 +89,7 @@ const desc = {
       item: 'parameter',
       desc: `
 <pre>
+
 {
   title: '알림 제목',
   message: '메시지',
@@ -110,6 +111,7 @@ options는 필수 값이 아니며,
     okTxt: '확인',
     cancelTxt: '취소',
   }
+
 </pre>
 `,
     },
@@ -117,6 +119,7 @@ options는 필수 값이 아니며,
       item: 'alert',
       desc: `
 <pre>
+
 const mo = useMo();
 const fnAlert = async() => {
   const rslt = await mo.alert({
@@ -124,6 +127,7 @@ const fnAlert = async() => {
     message: 'alert 메시지 테스트 중',
   });
 }
+
 </pre>
       `,
     },
@@ -131,6 +135,7 @@ const fnAlert = async() => {
       item: 'confirm',
       desc: `
 <pre>
+
 const mo = useMo();
 const fnConfirm = async() => {
   const rslt = await mo.confirm({
@@ -142,6 +147,7 @@ const fnConfirm = async() => {
     },
   });
 }
+
 </pre>`,
     },
   ],

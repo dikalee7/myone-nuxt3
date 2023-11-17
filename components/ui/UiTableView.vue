@@ -32,6 +32,7 @@
 </template>
 
 <script lang="ts">
+import '~/assets/css/ui.css';
 import { computed, defineComponent } from 'vue';
 
 export enum TB_THEME {
@@ -73,9 +74,4 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.motb table {
-  border-collapse: separate;
-  border-spacing: 0 10px;
-}
-</style>
+<style scoped></style>

@@ -3,6 +3,12 @@ export default defineNuxtRouteMiddleware((to, from) => {
   const cmn = useCmn();
 
   cmn.setLoading(to.meta.continueLoading as boolean);
+  cmn.setHeader({
+    title: '',
+    hideHeader: false,
+    hideBack: false,
+    hideHome: false,
+  });
 
   const headerInfo: IFHeader = {
     title: to.meta.title as string,

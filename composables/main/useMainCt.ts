@@ -39,15 +39,15 @@ export const useMainCt = () => {
     {
       id: 2,
       title: '',
-      subtitle: 'MINE',
-      text: `It's mine!!`,
+      subtitle: 'Nuxt3',
+      text: `nuxt study`,
       image: 'main/back-traffic.jpg',
       gradient: 'to top right, rgba(125, 46, 9,.8), rgba(250, 115, 52,.8)',
       actions: [
         {
-          name: 'QR',
+          name: 'Directory Structure',
           emnm: 'goPage',
-          empr: { name: 'qrView', params: {} },
+          empr: { name: 'nuxtstudy-DirectoryStructure', params: {} },
         },
       ],
     },
