@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-card>
+    <v-card class="mb-3">
       <template v-slot:text>
         <div class="text-center">{{ callRslt }}</div>
       </template>
@@ -21,7 +21,9 @@
         </v-row>
       </v-card-actions>
     </v-card>
-    <UiTableView :tbData="desc" />
+    <v-card>
+      <UiTableView :tbData="desc" />
+    </v-card>
   </v-container>
 </template>
 
@@ -56,9 +58,10 @@ const fnCall = async (gbn: string) => {
         title: '컨펌 확인',
         message: 'confirm 메시지 테스트 중',
         options: {
-          color: 'grey',
+          color: '#7a3214',
           width: 600,
-          zIndex: 3000,
+          okTxt: '예',
+          cancelTxt: '아니오',
         },
       });
       callRslt.value = `confirm 결과 : ${rslt}`;
@@ -67,8 +70,8 @@ const fnCall = async (gbn: string) => {
 };
 
 const desc = {
-  tbCls: 'text-caption',
-  tbTheme: TB_THEME.DARK,
+  tbCls: 'text-caption motb',
+  tbTheme: TB_THEME.LIGHT,
   hdInfo: [
     { key: 'item', name: '항목', width: '20%' },
     { key: 'desc', name: '설명', width: '80%' },
@@ -76,7 +79,39 @@ const desc = {
   tdInfo: [
     {
       item: 'composables',
-      desc: `composables/useMo.ts`,
+      desc: 'composables/useMo.ts',
+    },
+    {
+      item: 'component',
+      desc: 'components/ConfirmView.vue',
+    },
+    {
+      item: 'parameter',
+      desc: `
+<pre>
+{
+  title: '알림 제목',
+  message: '메시지',
+  options: {
+    color: '제목 배경색',
+    width: 알림창 넓이,
+    zIndex: z-index 값,
+    okTxt: '확인용 버튼 텍스트',
+    cancelTxt: '취소용 버튼 텍스트',
+  }
+}
+
+options는 필수 값이 아니며,
+넘기지 않은 경우 다음과 같음
+  options: {
+    color: 'indigo',
+    width: 400,
+    zIndex: 3000,
+    okTxt: '확인',
+    cancelTxt: '취소',
+  }
+</pre>
+`,
     },
     {
       item: 'alert',
@@ -101,6 +136,10 @@ const fnConfirm = async() => {
   const rslt = await mo.confirm({
     title: '컨펌 확인',
     message: 'confirm 메시지 테스트 중',
+    options: {
+      color: '#7a3214',
+      width: 600,
+    },
   });
 }
 </pre>`,

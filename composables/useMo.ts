@@ -3,6 +3,8 @@ export interface IFConfirmOptions {
   width?: number;
   zIndex?: number;
   noconfirm?: boolean;
+  okTxt?: string;
+  cancelTxt?: string;
 }
 
 export interface IFConfirmRequset {

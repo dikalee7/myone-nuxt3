@@ -3,7 +3,7 @@
     :theme="theme"
     fixed-header
     :height="tbData.height"
-    :class="tbData.tbCls ?? 'ma-2 text-caption'"
+    :class="tbData.tbCls ?? 'ma-2 text-caption motb'"
   >
     <colgroup>
       <col
@@ -73,4 +73,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.motb table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+</style>

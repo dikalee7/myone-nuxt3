@@ -7,7 +7,7 @@
       @keydown.esc="cancel"
     >
       <v-card>
-        <v-toolbar dark :color="options.color" dense flat>
+        <v-toolbar :color="options.color" dense flat>
           <v-toolbar-title class="text-body-2 font-weight-bold grey--text">
             {{ title }}
           </v-toolbar-title>
@@ -27,15 +27,17 @@
             text
             class="body-2 font-weight-bold"
             @click="cancel"
-            >Cancel</v-btn
           >
+            {{ options.cancelTxt }}
+          </v-btn>
           <v-btn
             color="primary"
             class="body-2 font-weight-bold"
             outlined
             @click="agree"
-            >OK</v-btn
           >
+            {{ options.okTxt }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -51,6 +53,8 @@ const basicOptions = {
   width: 400,
   zIndex: 3000,
   noconfirm: false,
+  okTxt: '확인',
+  cancelTxt: '취소',
 };
 const options: Ref<IFConfirmOptions> = ref(basicOptions);
 
