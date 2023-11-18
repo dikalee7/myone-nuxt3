@@ -15,6 +15,7 @@ export interface IFCtInfo {
 }
 
 export const useMainCt = () => {
+  // export default function () {
   const mainCont: IFCtInfo[] = [
     {
       id: 1,

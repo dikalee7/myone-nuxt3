@@ -15,6 +15,14 @@
 
 <script setup lang="ts">
 import { TB_THEME } from '~/components/ui/UiTableView.vue';
+
+definePageMeta({
+  title: 'Nuxt3 / Directory ',
+  hideHeader: false,
+  hideBack: false,
+  hideHome: false,
+});
+
 const desc = {
   tbCls: 'text-caption motb',
   tbTheme: TB_THEME.LIGHT,
@@ -28,7 +36,7 @@ const desc = {
       desc: `
 <pre>
 
-Nuxt는 개발 시 .nuxt/ 디렉토리를 사용하여 Vue 애플리케이션을 생성합니다.
+개발 모드에서 vue application을 만들기 위한 directory
 'nuxt dev' 실행시 자동 생성되므로 해당 디렉토리 내부를 임의 변경하지 말것
 
 </pre>`,
@@ -38,8 +46,9 @@ Nuxt는 개발 시 .nuxt/ 디렉토리를 사용하여 Vue 애플리케이션을
       desc: `
 <pre>
 
-Nuxt는 프로덕션용 애플리케이션을 구축할 때 .output/ 디렉터리를 생성
+배포 모드에서 vue application을 만들기 위한 directory
 'nuxt build' 실행시 자동 생성되므로 해당 디렉토리 내부를 임의 변경하지 말것
+
 </pre>`,
     },
     {
@@ -50,7 +59,7 @@ Nuxt는 프로덕션용 애플리케이션을 구축할 때 .output/ 디렉터�
 Stylesheets (CSS, SASS, etc.)
 Fonts
 Images 
-와 같은 웹을 구성하는 파일을 포함함
+와 같은 웹을 구성하는 자원파일을 저장하는 곳입니다.
 
 </pre>`,
     },
@@ -69,6 +78,7 @@ components/main/MainContent.vue
 디렉토리와 파일명으로 중첩된 이름을 제거하고 구성요소 명이 결정되므로 
 동일하게 아래와 같이 사용할 수 있습니다.
 &lt;MainContent /&gt;
+때문에 파일명과 구성요소 명을 동일하게 설정하는 것이 좋습니다.
 
 순수하게 파일명으로만 구성요소 이름을 정하고 싶다면 
 nuxt.config.ts 파일내에 아래와 같이 pathPrefix를 false로 설정하세요.
@@ -79,6 +89,56 @@ components: [
       pathPrefix: false,
     },
   ],
+
+*** Dynamic components ***
+resolveComponent 를 사용해서 동적으로 빌트인 컴포넌트를 이용하여 component를 import 할 수 있다.
+&lt;template /&gt;
+  &lt;component :is="clickable ? MyButton : 'div'" /&gt;
+&lt;/template&gt;
+&lt;script setup&gt;
+	const MyButton = resolveComponent('MyButton')
+&lt;/script&gt;
+
+</pre>`,
+    },
+    {
+      item: 'composables',
+      desc: `
+<pre>
+
+nuxt는 composables/ 아래에 있는 Vue 컴포저블을 애플리케이션으로 자동 import합니다.
+
+방법1) 명명하여 export 하기
+export const useFoo = () => {
+  return ...
+}
+
+방법2) default로 export 하기
+export default function()  {
+  return ...
+}
+
+방법1의 경우 명명한 useFoo()로 해당 컴포저블을 사용할 수 있습니다.
+
+방법2의 경우 컴포저블의 파일명을 이용하여 사용할 수 있습니다.
+use-foo.ts or useFoo.ts 로 파일명을 설정한 경우 useFoo()로 사용합니다.
+
+</pre>`,
+    },
+    {
+      item: 'content',
+      desc: `
+<pre>
+
+응용 프로그램에 대한 파일 기반 CMS
+
+</pre>`,
+    },
+    {
+      item: '111',
+      desc: `
+<pre>
+
 
 </pre>`,
     },
