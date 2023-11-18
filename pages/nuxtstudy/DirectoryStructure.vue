@@ -126,11 +126,26 @@ use-foo.ts or useFoo.ts 로 파일명을 설정한 경우 useFoo()로 사용합�
 </pre>`,
     },
     {
-      item: 'content',
+      item: 'layouts',
       desc: `
 <pre>
 
-응용 프로그램에 대한 파일 기반 CMS
+레이아웃을 지정하지 않으면 layouts/default.vue가 기본 레이아웃으로 사용됩니다.
+애플리케이션에 레이아웃이 하나만 있는 경우 app.vue를 사용하는 것이 좋습니다.
+다른 구성 요소와 달리 레이아웃에는 Nuxt가 레이아웃 변경 간에 전환을 적용할 수 있도록 
+단일 루트 요소 <slot />이 있어야 합니다.
+
+사용법1 - definePageMeta
+definePageMeta({
+  layout: 'layout'
+})
+
+사용법2 - 속성 사용
+&lt;NuxtLayout :name="layout" &gt;
+
+레이아웃 동적 변경 - setPageLayout
+setPageLayout('layout')
+
 
 </pre>`,
     },
