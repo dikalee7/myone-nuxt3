@@ -212,6 +212,44 @@ const modules = {
 
 </pre>`,
 };
+
+//node_modules
+const nodeModules = {
+  item: 'nodeModules',
+  desc: `
+<pre>
+
+package manager(npm yarn pnpm bun) 프로젝트 종속성 저장소
+
+</pre>`,
+};
+
+//pages
+const pages = {
+  item: 'pages',
+  desc: `
+<pre>
+
+nuxt의 파일 기반 라우팅을 위한 파일 저장 위치
+pages 디렉토리 내 경로가 자동 생성됨
+
+-| pages/
+---| index.vue
+---| guide/
+-----| sample.vue
+---| users-[group]/
+-----| [id].vue
+
+주소가 아래와 같다면..
+http://localhost:3000/ -> index.vue
+http://localhost:3000/guide/sample -> sample.vue
+http://localhost:3000/users-admin/am111 -> [id].vue
+http://localhost:3000/users-custom/ct111 -> [id].vue
+
+
+</pre>`,
+};
+
 const desc = {
   tbCls: 'text-caption motb',
   tbTheme: TB_THEME.LIGHT,
@@ -228,11 +266,14 @@ const desc = {
     layouts,
     middleware,
     modules,
+    nodeModules,
+    pages,
     {
-      item: '111',
+      item: 'pages',
       desc: `
 <pre>
 
+package manager(npm yarn pnpm bun) 프로젝트 종속성 저장소
 
 </pre>`,
     },
