@@ -235,6 +235,7 @@ pages 디렉토리 내 경로가 자동 생성됨
 
 -| pages/
 ---| index.vue
+---/[...slug].vue
 ---| guide/
 -----| sample.vue
 ---| users-[group]/
@@ -245,6 +246,23 @@ http://localhost:3000/ -> index.vue
 http://localhost:3000/guide/sample -> sample.vue
 http://localhost:3000/users-admin/am111 -> [id].vue
 http://localhost:3000/users-custom/ct111 -> [id].vue
+http://localhost:3000/hello/world -> [...slug].vue
+
+*** definePageMeta의 alias 속성을 이용해서 경로를 재지정할 수 있다.
+
+경로접근
+- 옵션 API : this.$route
+- Composition API : useRoute()
+
+useRoute 사용예
+==========================================================
+&lt;script setup lang="ts"&gt;
+const route = useRoute()
+
+if (route.params.group === 'admins' && !route.params.id) {
+  console.log('Warning! Make sure user is authenticated!')
+}
+&lt;/script&gt;
 
 
 </pre>`,

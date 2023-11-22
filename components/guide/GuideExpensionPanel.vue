@@ -46,10 +46,11 @@
 </template>
 
 <script setup lang="ts">
-const emits = defineEmits(['viewImg']);
-const props = defineProps<{
+export interface Props {
   cardInfo: Object;
-}>();
+}
+const emits = defineEmits(['viewImg']);
+const props = defineProps<Props>();
 
 const tfn = {
   getImageUrl: (imagename: string) => {

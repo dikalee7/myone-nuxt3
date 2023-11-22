@@ -48,7 +48,17 @@ export const useMainCt = () => {
         {
           name: 'Directory Structure',
           emnm: 'goPage',
-          empr: { name: 'nuxtstudy-DirectoryStructure', params: {} },
+          empr: { name: 'nuxt3-Directory', params: {} },
+        },
+        {
+          name: 'Components',
+          emnm: 'goPage',
+          empr: { name: 'nuxt3-Components', params: {} },
+        },
+        {
+          name: '테스트용',
+          emnm: 'goPage',
+          empr: { name: 'sample-ClientOnly', params: {} },
         },
       ],
     },

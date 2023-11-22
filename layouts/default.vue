@@ -1,7 +1,9 @@
 <template>
   <v-layout>
     <v-main>
-      <MyoneHeader />
+      <client-only>
+        <MyoneHeader />
+      </client-only>
       <slot />
       <ConfirmView />
     </v-main>

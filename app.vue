@@ -1,10 +1,10 @@
 <template>
   <NuxtLayout>
-    <NuxtLoadingIndicator />
+    <!-- <NuxtLoadingIndicator /> -->
     <NuxtPage />
   </NuxtLayout>
 </template>
- 
+
 <style scoped>
 nav,
 footer {
