@@ -286,15 +286,6 @@ const desc = {
     modules,
     nodeModules,
     pages,
-    {
-      item: 'pages',
-      desc: `
-<pre>
-
-package manager(npm yarn pnpm bun) 프로젝트 종속성 저장소
-
-</pre>`,
-    },
   ],
 };
 </script>

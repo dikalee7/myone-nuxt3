@@ -5,7 +5,6 @@
         <MyoneHeader />
       </client-only>
       <slot />
-      <ConfirmView />
     </v-main>
   </v-layout>
 </template>

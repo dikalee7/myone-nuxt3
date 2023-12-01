@@ -1,19 +1,19 @@
 <template>
   <NuxtLayout>
-    <!-- <NuxtLoadingIndicator /> -->
+    <NuxtLoadingIndicator
+      :height="loadingIndicatorHeight"
+      :duration="loadingIndicatorDuration"
+      :throttl="throttl"
+    />
     <NuxtPage />
+    <ConfirmView />
   </NuxtLayout>
 </template>
 
-<style scoped>
-nav,
-footer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-.layouts {
-  padding: 1rem;
-}
-</style>
+<script setup lang="ts">
+const loadingIndicatorHeight = 10;
+const loadingIndicatorDuration = 10000;
+const throttl = 0;
+</script>
+
+<style scoped></style>

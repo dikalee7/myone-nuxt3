@@ -55,11 +55,6 @@ export const useMainCt = () => {
           emnm: 'goPage',
           empr: { name: 'nuxt3-Components', params: {} },
         },
-        {
-          name: '테스트용',
-          emnm: 'goPage',
-          empr: { name: 'sample-ClientOnly', params: {} },
-        },
       ],
     },
     {

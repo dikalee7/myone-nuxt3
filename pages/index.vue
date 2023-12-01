@@ -2,7 +2,6 @@
   <v-card class="mx-auto">
     <v-container fluid>
       <v-row dense>
-        {{ apiBase }}
         <v-col cols="12" v-for="ct in mainCont" :key="ct.id">
           <MainContent :ctInfo="ct" @goPage="tfn.goPage" />
         </v-col>

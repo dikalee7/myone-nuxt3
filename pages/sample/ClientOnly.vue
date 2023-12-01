@@ -15,6 +15,10 @@
   </v-container>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  title: 'sample / ClientOnly',
+});
+</script>
 
 <style scoped></style>
